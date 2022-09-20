@@ -4,7 +4,7 @@ output: github_document
 ---
 
 ```{r}
-echo=FALSE
+echo = FALSE
 library(tidyverse)
 ```
 
@@ -15,5 +15,20 @@ Let's import data using the 'readr' package
 ```{r}
 litters_df = read_csv("data/FAS_litters.csv")
 litters_df = janitor::clean_names(litters_df)
+
+litters_df
+head(litters_df)
+tail(litters_df)
+```
+```{r, eval - FALSE}
+```
+
+```{r}
+skimr::skim(litters_df)
+```
+'read_csv' options...
+
+```{r, eval = FALSE}
+read_csv("data/FAS_litters.csv", na = c("", "NA", 999, 88))
 ```
 
